@@ -11,7 +11,6 @@ Este codigo foi criado por Almeida Joao de Almeida
 import java.io.*;
 public class BinaryToDecimal
 {
-
 	public static void main(String[]args)
 	{
 	  String numero=number();
@@ -21,18 +20,17 @@ public class BinaryToDecimal
 	{
 	  int sum=0,value;
 	  int cont=0;
-		for(int i=n.length()-1;i>=0;i--)
+	  for(int i=n.length()-1;i>=0;i--)
 	  {
 	    if(n.charAt(i)=='1')
 	      sum+=Math.pow(2, cont);  
 	    cont++;
 	  }
-	  System.out.println("O valor em decimal e:"+sum);
+	  System.out.println("O valor em decimal é:"+sum);
 	}
 	
 	public static String number()
-	{
-	  BufferedReader y=new BufferedReader(new InputStreamReader(System.in));	
+	{	
 	  String m="";
 	  boolean ok=false;
 	  do 
@@ -40,13 +38,11 @@ public class BinaryToDecimal
 	  	System.out.println("Introduza um numero binario");
 	  	try
 	  	{
-	  		m=y.readLine();
+	  		m=(new BufferedReader(new InputStreamReader(System.in))).readLine();
 	  		ok=true;
 	  		for(int i=0;i<m.length();i++)
-	  		{
 	  			if(m.charAt(i)!='0' && m.charAt(i)!='1')
 	  				ok=false;
-	  		}
 	  		if(!ok)
 	  			System.err.println("Nao e decimal");
 	  	}catch(IOException u) {System.out.println(u.getMessage());}
